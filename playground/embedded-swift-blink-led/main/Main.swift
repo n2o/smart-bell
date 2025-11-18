@@ -27,7 +27,7 @@ func main() {
     ("WHITE (r:16, g:16, b:16)", .lightWhite),
     ("YELLOW (r:16, g:16, b:0)", LedStrip.Color(r: 16, g: 16, b: 0)),
     ("CYAN (r:0, g:16, b:16)", LedStrip.Color(r: 0, g: 16, b: 16)),
-    ("MAGENTA (r:16, g:0, b:16)", LedStrip.Color(r: 16, g: 0, b: 16))
+    ("MAGENTA (r:16, g:0, b:16)", LedStrip.Color(r: 16, g: 0, b: 16)),
   ]
 
   var colorIndex = 0
