@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "playground/embedded-swift-blink-led"
+    }
+  ],
+  "settings": {
+    "cSpell.words": ["idf", "xtensa"],
+    // We must explicitly list folders to exclude from search, as search.useIgnoreFiles is not being respected.
+    "search.exclude": {
+      "**/build": true,
+      "**/node_modules": true,
+      "**/out": true,
+      "**/managed_components": true,
+      "**/dependencies.lock": true,
+      "**/sdkconfig": true,
+      "**/sdkconfig.old": true
+    }
+  }
+}
