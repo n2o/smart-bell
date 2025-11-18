@@ -1,0 +1,13 @@
+managed_components/
+build/
+sdkconfig
+sdkconfig.old
+dependencies.lock
+.DS_Store
+**/.DS_Store
+.build
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
