@@ -1,34 +1,24 @@
-// The code will test different colors on the WS2812 RGB LED on GPIO8
 @_cdecl("app_main")
 func main() {
   print("Hello from Swift on ESP32-C6-Zero!")
-  print("Starting LED color test...")
 
-  let delayMs: UInt32 = 2000  // 2 seconds per color
+  let delayMs: UInt32 = 1000
   let ledStrip = LedStrip(gpioPin: 8, maxLeds: 1)
   ledStrip.clear()
+  ledStrip.setPixel(index: 0, color: .green)
+  ledStrip.refresh()
 
-  let testColors: [(String, LedStrip.Color)] = [
-    ("OFF", .off),
-    ("RED (r:16, g:0, b:0)", .red),
-    ("GREEN (r:0, g:16, b:0)", .green),
-    ("BLUE (r:0, g:0, b:16)", .blue),
-    ("WHITE (r:16, g:16, b:16)", .lightWhite),
-    ("YELLOW (r:16, g:16, b:0)", LedStrip.Color(r: 16, g: 16, b: 0)),
-    ("CYAN (r:0, g:16, b:16)", LedStrip.Color(r: 0, g: 16, b: 16)),
-    ("MAGENTA (r:16, g:0, b:16)", LedStrip.Color(r: 16, g: 0, b: 16)),
-  ]
+  let speaker = Speaker(pin: 0)
+  speaker.playScale()
 
-  var colorIndex = 0
+  // print("Testing speaker with simple beep...")
+  // speaker.beep(durationMs: 500)  // 500ms beep for testing
 
-  while true {
-    let (colorName, color) = testColors[colorIndex]
-    print(">>> Testing: \(colorName)")
+  // vTaskDelay(1000 / (1000 / UInt32(configTICK_RATE_HZ)))  // 1 second pause
 
-    ledStrip.setPixel(index: 0, color: color)
-    ledStrip.refresh()
+  // print("Playing scale...")
 
-    colorIndex = (colorIndex + 1) % testColors.count
-    vTaskDelay(delayMs / (1000 / UInt32(configTICK_RATE_HZ)))
-  }
+  // while true {
+  //   vTaskDelay(delayMs / (1000 / UInt32(configTICK_RATE_HZ)))
+  // }
 }

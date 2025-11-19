@@ -11,7 +11,9 @@
 
 #include <stdio.h>
 
+#include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "led_strip.h"
+#include "rom/ets_sys.h"
 #include "sdkconfig.h"
